@@ -1,11 +1,7 @@
 import React from "react";
-import { IconButton } from "@chakra-ui/button";
-import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
-import { Box, Center, HStack, Text, VStack } from "@chakra-ui/layout";
+import { Box, Center, HStack, Text, VStack, Input, InputGroup, InputRightElement, IconButton } from "@chakra-ui/react";
 import { useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import { useCSSContext } from "../../../contexts/CssContext";
 import { useLoginContext } from "./LoginContext";
 
 const InputForm = () => {
@@ -13,7 +9,6 @@ const InputForm = () => {
   const [togglePassShow, setTogglePass] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { primaryColor } = useCSSContext();
 
   return (
     // <form w={"100%"}>
@@ -22,13 +17,7 @@ const InputForm = () => {
         <Text mx={"4"} fontWeight={"bold"} fontSize={"sm"}>
           Email or Phone
         </Text>
-        <Input
-          fontSize={"sm"}
-          borderRadius={"full"}
-          placeholder="example@mail.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <Input fontSize={"sm"} borderRadius={"full"} placeholder="example@mail.com" value={email} onChange={(e) => setEmail(e.target.value)} />
       </Box>
       <Box w={"100%"}>
         <Text mx={"4"} fontWeight={"bold"} fontSize={"sm"}>
@@ -60,16 +49,7 @@ const InputForm = () => {
         </InputGroup>
       </Box>
       <Box w={"100%"} py={"4"}>
-        <Input
-          w={"100%"}
-          size={"lg"}
-          type={"submit"}
-          value={"Register Now"}
-          bg={primaryColor}
-          color={"white"}
-          cursor={"pointer"}
-          borderRadius={"full"}
-        />
+        <Input w={"100%"} size={"lg"} type={"submit"} value={"Register Now"} bg={"primary"} color={"white"} cursor={"pointer"} borderRadius={"full"} />
       </Box>
     </VStack>
     // </form>
@@ -97,12 +77,7 @@ function Register() {
       <Center w={"100%"}>
         <InputForm />
       </Center>
-      <HStack
-        fontSize={"sm"}
-        w={"100%"}
-        fontWeight={"bold"}
-        justifyContent={"end"}
-      >
+      <HStack fontSize={"sm"} w={"100%"} fontWeight={"bold"} justifyContent={"end"}>
         <Text
           _hover={{ textDecoration: "underline" }}
           color={"primary"}
