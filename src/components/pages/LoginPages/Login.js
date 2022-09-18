@@ -27,29 +27,8 @@ const InputForm = () => {
           Password
         </Text>
         <InputGroup>
-          <InputRightElement>
-            {password && (
-              <IconButton
-                variant={""}
-                fontSize={"xl"}
-                color={"gray.600"}
-                onClick={() => {
-                  setTogglePass(!togglePassShow);
-                }}
-                icon={togglePassShow ? passIcon[0] : passIcon[1]}
-              />
-            )}
-          </InputRightElement>
-          <Input
-            type={togglePassShow ? "password" : "text"}
-            placeholder="Enter Password"
-            fontSize={"sm"}
-            borderRadius={"full"}
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
+          <InputRightElement>{password && <IconButton variant={""} fontSize={"xl"} color={"gray.600"} onClick={() => setTogglePass(!togglePassShow)} icon={togglePassShow ? passIcon[0] : passIcon[1]} />}</InputRightElement>
+          <Input type={togglePassShow ? "password" : "text"} placeholder="Enter Password" fontSize={"sm"} borderRadius={"full"} value={password} onChange={(e) => setPassword(e.target.value)} />
         </InputGroup>
       </Box>
       <HStack w={"100%"} fontSize={{ xl: "sm", base: "xs" }} justifyContent={"space-between"} px={"2"}>
@@ -106,14 +85,7 @@ function Login() {
       <HStack fontSize={"sm"} w={"100%"} fontWeight={"bold"}>
         <Text>Not register yet?</Text>
         <Link to="/">
-          <Text
-            px={"2"}
-            _hover={{ textDecoration: "underline" }}
-            color={"primary"}
-            onClick={() => {
-              setToggle(!toggle);
-            }}
-          >
+          <Text px={"2"} _hover={{ textDecoration: "underline" }} color={"primary"} onClick={() => setToggle(!toggle)}>
             Create An Account
           </Text>
         </Link>

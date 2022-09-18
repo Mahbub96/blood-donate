@@ -24,28 +24,8 @@ const InputForm = () => {
           Password
         </Text>
         <InputGroup>
-          <InputRightElement>
-            {password && (
-              <IconButton
-                variant={""}
-                fontSize={"xl"}
-                onClick={() => {
-                  setTogglePass(!togglePassShow);
-                }}
-                icon={togglePassShow ? passIcon[0] : passIcon[1]}
-              />
-            )}
-          </InputRightElement>
-          <Input
-            type={togglePassShow ? "password" : "text"}
-            placeholder="Enter Password"
-            fontSize={"sm"}
-            borderRadius={"full"}
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
+          <InputRightElement>{password && <IconButton variant={""} fontSize={"xl"} onClick={() => setTogglePass(!togglePassShow)} icon={togglePassShow ? passIcon[0] : passIcon[1]} />}</InputRightElement>
+          <Input type={togglePassShow ? "password" : "text"} placeholder="Enter Password" fontSize={"sm"} borderRadius={"full"} value={password} onChange={(e) => setPassword(e.target.value)} />
         </InputGroup>
       </Box>
       <Box w={"100%"} py={"4"}>
@@ -78,14 +58,7 @@ function Register() {
         <InputForm />
       </Center>
       <HStack fontSize={"sm"} w={"100%"} fontWeight={"bold"} justifyContent={"end"}>
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          color={"primary"}
-          onClick={() => {
-            setToggle(!toggle);
-          }}
-          cursor={"pointer"}
-        >
+        <Text _hover={{ textDecoration: "underline" }} color={"primary"} onClick={() => setToggle(!toggle)} cursor={"pointer"}>
           {"Go Back >"}
         </Text>
       </HStack>
