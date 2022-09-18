@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Center, HStack, Text, VStack, Input, InputGroup, InputRightElement, Checkbox, Button, IconButton } from "@chakra-ui/react";
 import { useState } from "react";
-import { IoLogoGoogle, IoEye, IoEyeOff } from "react-icons/io5";
-import { FaFacebookF } from "react-icons/fa";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useLoginContext } from "./LoginContext";
 
@@ -15,7 +15,7 @@ const InputForm = () => {
 
   return (
     // <form w={"100%"}>
-    <VStack w={"100%"} gap={"2"}>
+    <VStack h={"100%"} maxH={"300px"} w={"100%"} justifyContent={"space-around"}>
       <Box w={"100%"}>
         <Text mx={"4"} fontWeight={"bold"} fontSize={"sm"}>
           Email or Phone
@@ -57,32 +57,32 @@ function Login() {
 
   return (
     <>
-      <Box w={"100%"}>
-        <Text fontWeight={"bold"} fontSize={"3xl"}>
+      <Center h={"20%"} w={"100%"} flexDirection={"Column"} alignItems={"start"}>
+        <Text fontWeight={"bold"} fontSize={"2xl"}>
           Login
         </Text>
         <Text fontSize={"sm"} color={"gray"}>
           Some Unusefull test is here test is here
         </Text>
-      </Box>
-      <VStack w={"100%"}>
-        <Button w={"100%"} leftIcon={<IoLogoGoogle />} variant={"outline"} borderRadius={"full"} colorScheme={"red"}>
-          Sign In With Google
+      </Center>
+      <HStack h={"10%"} w={"100%"} gap={"2"}>
+        <Button w={"100%"} leftIcon={<FaGoogle />} variant={"outline"} borderRadius={"full"} colorScheme={"red"}>
+          <Text px={"2"}>Google</Text>
         </Button>
         <Text mx={"4"}>or</Text>
-        <Button w={"100%"} leftIcon={<FaFacebookF />} variant={"outline"} borderRadius={"full"} colorScheme={"facebook"}>
-          Sign In With Facebook
+        <Button w={"100%"} leftIcon={<FaFacebook />} variant={"outline"} borderRadius={"full"} colorScheme={"facebook"}>
+          <Text px={"2"}>Facebook</Text>
         </Button>
-      </VStack>
-      <Center>
+      </HStack>
+      <Center h={"8%"}>
         <Text fontSize={"sm"} color={"gray"}>
           -------Please Sign in to your account--------
         </Text>
       </Center>
-      <Center w={"100%"}>
+      <Center w={"100%"} h={"52%"}>
         <InputForm />
       </Center>
-      <HStack fontSize={"sm"} w={"100%"} fontWeight={"bold"}>
+      <HStack h={"10%"} fontSize={"sm"} w={"100%"} fontWeight={"bold"}>
         <Text>Not register yet?</Text>
         <Link to="/">
           <Text px={"2"} _hover={{ textDecoration: "underline" }} color={"primary"} onClick={() => setToggle(!toggle)}>

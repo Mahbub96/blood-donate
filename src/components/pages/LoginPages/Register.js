@@ -12,7 +12,7 @@ const InputForm = () => {
 
   return (
     // <form w={"100%"}>
-    <VStack w={"100%"} gap={"2"}>
+    <VStack w={"100%"} h={"100%"} maxH={"300px"} justifyContent={"space-around"}>
       <Box w={"100%"}>
         <Text mx={"4"} fontWeight={"bold"} fontSize={"sm"}>
           Email or Phone
@@ -41,23 +41,23 @@ function Register() {
 
   return (
     <>
-      <Box w={"100%"}>
-        <Text fontWeight={"bold"} fontSize={"3xl"}>
+      <Center h={"20%"} w={"100%"} flexDirection={"Column"} alignItems={"start"}>
+        <Text fontWeight={"bold"} fontSize={"2xl"}>
           Register Now
         </Text>
         <Text fontSize={"sm"} color={"gray"}>
           Some Unusefull test is here test is here
         </Text>
-      </Box>
-      <Center>
+      </Center>
+      <Center h={"10%"}>
         <Text fontSize={"sm"} color={"gray"}>
-          -------Please Sign in to your account--------
+          -------Sign up to your account--------
         </Text>
       </Center>
-      <Center w={"100%"}>
+      <Center h={"60%"} w={"100%"}>
         <InputForm />
       </Center>
-      <HStack fontSize={"sm"} w={"100%"} fontWeight={"bold"} justifyContent={"end"}>
+      <HStack h={"10%"} fontSize={"sm"} w={"100%"} fontWeight={"bold"} justifyContent={"end"}>
         <Text _hover={{ textDecoration: "underline" }} color={"primary"} onClick={() => setToggle(!toggle)} cursor={"pointer"}>
           {"Go Back >"}
         </Text>

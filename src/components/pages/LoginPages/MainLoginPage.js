@@ -12,10 +12,10 @@ function LoginPage() {
         <HStack h={"100%"}>
           <VStack w={{ md: toggle ? "50%" : "0%", base: "0%" }} h={"100%"} transition={"0.3s"}></VStack>
           <VStack w={{ md: "50%", base: "100%" }} minW={{ md: "400px", base: "auto" }} h={"100%"} justifyContent={"center"} bg={"blue.50"}>
-            <HStack pb={"4"}>
-              <Image maxW={"12"} src="./assets/images/logo.png" />
+            <HStack h={"10%"}>
+              <Image h={"100%"} src="./assets/images/logo.png" />
             </HStack>
-            <VStack w={{ xl: "70%", base: "80%" }} gap={"6"}>
+            <VStack h={"85%"} w={{ xl: "70%", base: "80%" }} gap={"0"}>
               {toggle ? <Login /> : <Register />}
             </VStack>
           </VStack>
